@@ -4,5 +4,4 @@ services:
 before_install:
   - docker build -t clavance/docker -f Dockerfile.dev .
 script:
-  - docker run clavance/docker npm run test -- --coverage
-  
+  - docker run -e CI=true clavance/docker npm run test
